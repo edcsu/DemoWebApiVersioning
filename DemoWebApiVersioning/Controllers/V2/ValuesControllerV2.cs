@@ -2,15 +2,16 @@
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace DemoWebApiVersioning.Controllers
+namespace DemoWebApiVersioning.Controllers.V2
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesControllerV2 : ControllerBase
+    [ApiVersion("2.0")]
+    public class ValuesController : ControllerBase
     {
         // GET: api/<ValuesControllerV2>
         [HttpGet]
-        public IEnumerable<Value> Get()
+        public IEnumerable<Value> GetAll()
         {
             return new Value[] {
                new Value { Id = Guid.NewGuid(), Result = "value1"},
